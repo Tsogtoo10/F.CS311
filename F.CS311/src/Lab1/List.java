@@ -6,6 +6,7 @@ public boolean empty(int size) {
 }
 	public static void main(String[] args) {
 		System.out.println("Javhaa");
+		System.out.println("Tsogtoo");
 
 	}
 
