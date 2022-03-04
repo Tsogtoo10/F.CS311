@@ -35,17 +35,17 @@ public class ArrayList {
 			throw new IndexOutOfBoundsException("index = " + index + "  size = " + size);
 	}
 	
-	public int indexOf(int jj) { //элемент 
-		//checkIndex(index);
-		System.out.println( "Хайх утгаа оруулна уу " );
-		 jj = sc.nextInt();
-	      for (int i = 0; i < size; i++)
-	         if (st[size].equals(jj))
-	           return i;
-	     // System.out.println( i + "ийм элемент байна " );
-	     
-	      return -1;
-	   }    
+	
+	
+	public Object indexOf() { 
+		   {
+			   System.out.println("Та хайх утгынхаа индексийг оруулна уу?");
+			   int index=sc.nextInt();
+			      checkIndex(index);
+			      System.out.println(index+ " дугаар индекс дээр "+st[index]+ " гэсэн элемэнт байна.");
+			      return st[index];
+			   }
+	}
 
 	public Object remove(int index) {
 		checkIndex(index);
@@ -58,6 +58,7 @@ public class ArrayList {
 		System.out.println("Элемэнт амжилттай устлаа");
 		return removedElement;
 	}
+	
 
 	public void add(Object theObject) {
 		System.out.println("Та элемэнтээ оруулна уу?");
@@ -69,7 +70,7 @@ public class ArrayList {
 
 	public void printList() {
 		for (int i = 0; i < size; i++) {
-			System.out.println("Элемент: " + (Object) st[i]);
+			System.out.println("Элемэнт: " +(Object) st[i]);
 		}
 	}
 	
@@ -79,8 +80,8 @@ public class ArrayList {
 		System.out.println("2) Элемент нэмэх");
 		System.out.println("3) Элемент устгах");
 		System.out.println("4) Хэвлэх");
-		System.out.println("5) Жагсаалтын элемент");
-		System.out.println("6) Элемент хайх");
+		System.out.println("5) Жагсаалтын хоосон үгүйг мэдэх");
+		System.out.println("6) Индексээр элемэнт харах");
 	}
 
 	public static void main(String[] args) {
@@ -114,7 +115,7 @@ public class ArrayList {
 					break;
 				}
 				case 6:
-		    		 arr.indexOf(0);
+		    		 arr.indexOf();
 		    		 break;
 		    	  
 				default:
