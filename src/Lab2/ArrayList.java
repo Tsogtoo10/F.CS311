@@ -35,6 +35,25 @@ public class ArrayList<G> {
 			return a[index];
 		}
 	}
+	
+	public void remove(G[] a, int index) {
+		for (int i = index; i < size - 1; i++) {
+			a[i] = a[i + 1];
+		}
+		size--;
+	}
+
+	public void printList(G[] a) {
+		for (int i = 0; i < size; i++) {
+			System.out.println("Элемэнт: " + (Object) a[i]);
+		}
+	}
+
+	public void add(G[] array, G element) {
+		array[size] = element;
+		size++;
+	}
+	
 	public void menu() {
 		System.out.println(" \n              ===ArrayList DataStructure===");
 		System.out.println("1) Жагсаалтын урт");
@@ -63,6 +82,20 @@ public class ArrayList<G> {
 					arr.size();
 					break;
 				}
+				case 2: {
+					System.out.print("Та утгаа оруулна уу :");
+					a = sc.next();
+					arr.add(j, a);
+					System.out.println("Элемэнт амжилттай нэмэгдлээ.");
+					break;
+				}
+				case 3: {
+					System.out.println("Устгах элемэнтийнхээ индексийг оруулна уу :");
+					int removed = sc.nextInt();
+					arr.remove(j, removed);
+					System.out.println("Элемэнт амжилттай устлаа");
+					break;
+				}
 				
 				case 4: {
 					System.out.println("Indexee oruul");
@@ -75,7 +108,11 @@ public class ArrayList<G> {
 					arr.empty();
 					break;
 				}
-			
+				case 6: {
+					arr.printList(j);
+					break;
+				}
+				
 				default:
 					System.out.println("1-6 хооронд тоо оруулна уу!");
 
